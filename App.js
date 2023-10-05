@@ -1,14 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View,Platform } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import MoviesContainer from './src/components/container/MoviesContainer';
 import { ThemeProvider,createTheme,darkColors,lightColors } from '@rneui/themed';
 import AppStack from './src/components/stack/AppStack'
-import SearchContainer from './src/components/container/SearchContainer';
-
-import {  Button } from 'react-native';
 import React, { useState } from 'react';
-import Dropdown from './src/Dropdown';
 const theme = createTheme({
     lightColors: {
       ...Platform.select({

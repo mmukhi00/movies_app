@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import {Text,Image, StyleSheet} from 'react-native'
-import { getMovies, getSearchDetails } from '../../services/api'
+import {getSearchDetails } from '../../services/api'
 import { View } from 'react-native'
 import { imageUrl } from '../../constants/Constants'
 

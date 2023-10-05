@@ -2,10 +2,7 @@ import { useEffect, useState } from 'react'
 import { View,TouchableOpacity,TextInput,Button } from 'react-native'
 import FilterOptions from '../search/FilterOptions'
 import {  getSearchDetails } from '../../services/api'
-import { results } from '../../staticData/NowPlaying'
 import SearchList from '../lists/SearchList'
-import Icon from 'react-native-vector-icons/Ionicons'; // You'll need to install this package
-import { Dropdown } from 'react-native-element-dropdown';
 
 const data = [
     { label: 'now_playing', value: '1' },

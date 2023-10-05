@@ -3,8 +3,6 @@ import FilterOptions from '../search/FilterOptions'
 import SearchOption from '../search/SearchOption'
 import { Text } from '@rneui/themed'
 import { Button } from '@rneui/themed'
-// import { data as staticData } from '../../staticData/search'
-import { data as staticData} from '../../staticData/tv'
 import { StyleSheet, View } from 'react-native'
 
 import { getSearchResults } from '../../services/api'

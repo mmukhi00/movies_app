@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react'
 import { View } from 'react-native'
 import FilterOptions from '../search/FilterOptions'
-import { getSearchDetails, getTV } from '../../services/api'
-import { results } from '../../staticData/NowPlaying'
+import { getSearchDetails } from '../../services/api'
 import SearchList from '../lists/SearchList'
 
 const data = [
