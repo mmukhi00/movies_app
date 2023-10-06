@@ -1,5 +1,5 @@
-import { Button } from '@rneui/base'
-import { Card, Text } from '@rneui/themed'
+// import { Button } from '@rneui/base'
+import { Card, Text,Button } from '@rneui/themed'
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
 import { imageUrl } from '../../constants/Constants'
@@ -18,8 +18,8 @@ const SearchCard = (props) => {
     <Text style={styles.title}>{name}</Text>
     <Text>Popularity: {popularity}</Text>
     <Text>Release Date: {releaseDate}</Text>
-    <View style={styles.button} >
-    <Button title='View' onPress={() => {
+    <View style={styles.buttonView} >
+    <Button style={styles.button} title='View' onPress={() => {
             navigation.navigate('Search', {
                 id,
                 media_type
@@ -64,9 +64,13 @@ const styles= StyleSheet.create({
         marginLeft:10
        
     },
-    button: {
+    buttonView: {
         width:200
+    },
+    button: {
+        backgroundColor:'#52B4D0'
     }
+
         
 
 })

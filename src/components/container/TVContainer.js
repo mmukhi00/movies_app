@@ -25,7 +25,7 @@ const TVContainer = ({navigation}) => {
          alert('error' `Something went wrong ${error}`)
      }
     )
-        // SetAllTV(results)
+
     }, [type])
     
        const selectedValue = (item)=>{
@@ -36,7 +36,7 @@ const TVContainer = ({navigation}) => {
         <>
             <View>
               
-                <FilterOptions selectedValue={selectedValue} data={ data}></FilterOptions>
+                <FilterOptions selectedValue={selectedValue} data={ data} type={type}></FilterOptions>
                 <SearchList result={allTV} value='tv' navigation={navigation} />
             </View>
         </>

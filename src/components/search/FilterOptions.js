@@ -4,7 +4,7 @@ import { View, TouchableOpacity, Text,StyleSheet} from 'react-native';
 import Modal from 'react-native-modal';
 
 
-const FilterOptions = ({ data,selectedValue }) => {
+const FilterOptions = ({ data,selectedValue,type }) => {
  
   return (
    <Dropdown
@@ -12,6 +12,7 @@ const FilterOptions = ({ data,selectedValue }) => {
       data={data}
       labelField="label"
       valueField="value"
+      placeholder={type}
       onChange={item => {
        selectedValue(item.label)
       }}>

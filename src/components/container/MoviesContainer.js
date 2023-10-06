@@ -46,7 +46,7 @@ const MoviesContainer = ({navigation}) => {
     return (
         <>
            <View>
-                <FilterOptions selectedValue={selectedValue} data={data}></FilterOptions>
+                <FilterOptions selectedValue={selectedValue} data={data} type={type}></FilterOptions>
                 <SearchList result={allMovies} value='movie' navigation={navigation} />
             </View>
         </>

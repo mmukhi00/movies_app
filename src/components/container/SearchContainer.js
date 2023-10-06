@@ -53,7 +53,7 @@ const SearchContainer = ({navigation}) => {
         <SearchOption searchValue={searchValue} onSearch={onSearch} search={search} />
         <Text style={styles.title}>Choose Search Type*</Text> 
         <View style={styles.filterView}>
-        <FilterOptions style={styles.filter} data={data} selectedValue={selectedValue} />
+        <FilterOptions style={styles.filter} data={data} selectedValue={selectedValue} type={value} />
         <Button style={styles.button} onPress={onSearch} title="search"></Button>
          </View>
         <Text>Please select a search type</Text>
