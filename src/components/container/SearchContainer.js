@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState,useRef } from 'react'
 import FilterOptions from '../search/FilterOptions'
 import SearchOption from '../search/SearchOption'
 import { Text } from '@rneui/themed'
@@ -11,7 +11,7 @@ import SearchList from '../lists/SearchList'
         { label: 'movie', value: '1' },
         { label: 'multi', value: '2' },
         { label: 'tv', value: '3' },
-    ]
+  ]
 const SearchContainer = ({navigation}) => {
     
     const [search, setSearch] = useState()
@@ -19,7 +19,7 @@ const SearchContainer = ({navigation}) => {
    const [searchResult,setSearchResult]=useState()
     const [isSearched, setIsSearched] = useState(false)
     const[loading,setLoading]=useState(false)
-   
+    const [warning,setWarning]=useState(false)
     const selectedValue = (value) => {
         setValue(value)
     }
@@ -29,6 +29,7 @@ const SearchContainer = ({navigation}) => {
 
     const onSearch = () => {
         if (search) {
+            setWarning(false)
             getSearchResults(value, search).then(
                 results => {
                     setSearchResult(results)
@@ -39,20 +40,23 @@ const SearchContainer = ({navigation}) => {
             )
             setIsSearched(true)
         }
+        else {
+            setWarning(true)
+        }
       
     }
     return (
         <>
            <View style={styles.container}>
-          <Text style={styles.title}>Search Movie/Tv Show Name* </Text> 
+          <Text style={styles.title}>Search Movie/TV Show Name* </Text> 
         <SearchOption searchValue={searchValue} onSearch={onSearch} search={search} />
-        <Text style={styles.title}>Choose Search Type*</Text> 
+                <Text style={styles.title}>Choose Search Type*</Text> 
         <View style={styles.filterView}>
         <FilterOptions style={styles.filter} data={data} selectedValue={selectedValue} type={value} />
-        <Button style={styles.button} onPress={onSearch} title="search"></Button>
+        <Button style={styles.button } onPress={onSearch} title="search"></Button>
          </View>
-        <Text>Please select a search type</Text>
-            </View>
+        {warning?(<Text style={styles.warningMessage}>Movie/TV show name is required</Text>): <Text>Please select a search type</Text>} 
+        </View>
              {isSearched ?
                 (<SearchList result={searchResult} value={value} navigation={navigation} />)                
                     : (<View style={styles.message}><Text style={styles.messageText}>Please initiate search</Text></View>)}
@@ -63,9 +67,10 @@ const SearchContainer = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
         marginTop: 10,
-      marginLeft:50,
+        marginLeft: 50,
+      marginBottom:5,
       width: '70%',
-        justifyContent: 'center', 
+    justifyContent: 'center', 
   },
   title: {
       fontWeight: 'bold',
@@ -75,7 +80,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems:'center',
         justifyContent:'center',
-        marginRight:90
+        marginRight: 50,
+        height:60
     },
     message: {
         alignItems: 'center',
@@ -89,8 +95,11 @@ const styles = StyleSheet.create({
     },
     button: {
         marginLeft: 10,
-        width:100
+        width: 100,
     },
+    warningMessage: {
+        color: 'red' 
+    }
     
 })
 
