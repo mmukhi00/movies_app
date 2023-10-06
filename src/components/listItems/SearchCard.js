@@ -22,7 +22,8 @@ const SearchCard = (props) => {
     <Button style={styles.button} title='View' onPress={() => {
             navigation.navigate('Search', {
                 id,
-                media_type
+                media_type,
+                name
             })
     }}></Button>
      </View>

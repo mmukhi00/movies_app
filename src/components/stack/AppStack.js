@@ -19,7 +19,10 @@ const AppStack = () => {
             color: '#fff'
           }
         }}/>
-        <Stack.Screen name='Search' component={DetailsScreen}/>
+          <Stack.Screen name='Search' component={DetailsScreen}
+            options={({ route }) => ({ title: route.params.name })}
+
+          />
             </Stack.Navigator>
         </NavigationContainer>
     )
