@@ -22,8 +22,7 @@ const SearchDetails = ({ navigation, route, }) => {
   return (
   <>
       {movie && <View style={styles.container}>
-             <Text style={styles.title}>{movie?.original_title?movie?.original_title:movie?.original_name}</Text>    
-
+        <Text style={styles.title}>{movie?.original_title?movie?.original_title:movie?.original_name}</Text>    
        <Image source={{uri:imageUrl + movie.poster_path}} style={styles.imageView}/>
       <Text style={styles.overView}>{movie.overview}</Text>
       <Text>Popularity: {movie.popularity} | Release Date: {movie?.release_date?movie.release_date:movie.first_air_date}</Text>

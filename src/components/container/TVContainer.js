@@ -16,7 +16,6 @@ const TVContainer = ({navigation}) => {
      const [allTV,SetAllTV]=useState()
     
     useEffect(() => {
-        console.log(type)
        getSearchDetails(type,'tv').then(
         tv => {
             SetAllTV(tv.results)
@@ -32,14 +31,12 @@ const TVContainer = ({navigation}) => {
             setType(item)
         }
     
-    return (
-        <>
+    return (  
             <View>
               
                 <FilterOptions selectedValue={selectedValue} data={ data} type={type}></FilterOptions>
                 <SearchList result={allTV} value='tv' navigation={navigation} />
             </View>
-        </>
     )
 }
 

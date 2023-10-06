@@ -27,7 +27,6 @@ const MoviesContainer = ({navigation}) => {
   };
     
     useEffect(() => {
-        console.log(type)
        getSearchDetails(type,'movie').then(
         movies => {
             SetAllMovies(movies.results)
@@ -36,7 +35,6 @@ const MoviesContainer = ({navigation}) => {
          alert('error' `Something went wrong ${error}`)
      }
     )
-        // SetAllMovies(results)
     }, [type])
     
        const selectedValue = (item)=>{
@@ -44,12 +42,11 @@ const MoviesContainer = ({navigation}) => {
         }
     
     return (
-        <>
+     
            <View>
                 <FilterOptions selectedValue={selectedValue} data={data} type={type}></FilterOptions>
                 <SearchList result={allMovies} value='movie' navigation={navigation} />
-            </View>
-        </>
+            </View>  
     )
 }
 

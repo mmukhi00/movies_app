@@ -13,7 +13,6 @@ export const getSearchDetails = async(value,media_type) => {
             paramsSerializer:params=>qs.stringify(params,{arrayFormat:'repeat'})
          })
         const response = await dataAxios.get(url+`${media_type}/${value}`, {params})
-        console.log('Response: ' + JSON.stringify(response.data.results))
         return response.data
     }
     catch (error) {
@@ -45,10 +44,7 @@ export const getSearchResults = async (value,person) => {
             paramsSerializer: params => qs.stringify(params, { arrayFormat: 'repeat' })
         })
         
-        console.log((url + `${value}`))
-        console.log(params)
         const response = await dataAxios.get(url + `${value}`, config)
-        console.log("response:"+JSON.stringify(response.data.results))
         return response.data.results
     }
     catch (error) {

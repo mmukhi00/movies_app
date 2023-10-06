@@ -19,9 +19,7 @@ const SearchContainer = ({navigation}) => {
    const [searchResult,setSearchResult]=useState()
     const [isSearched, setIsSearched] = useState(false)
     const[loading,setLoading]=useState(false)
-    useEffect(() => {
-        
-    }, [])
+   
     const selectedValue = (value) => {
         setValue(value)
     }
@@ -41,10 +39,7 @@ const SearchContainer = ({navigation}) => {
             )
             setIsSearched(true)
         }
-        console.log(search)
-        console.log(value)
-        // console.log(searchResult)
-
+      
     }
     return (
         <>
