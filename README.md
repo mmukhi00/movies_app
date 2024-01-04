@@ -3,4 +3,4 @@ The application is crafted to explore a catalog of movies and TV shows based on 
 Developed using React Native and styled with CSS, it seamlessly integrates with TMDb APIs to fetch relevant data. This project serves as a practical assignment within a Web and Mobile Development course.
 
 # Run App
--`npm start`
+`npm start`
